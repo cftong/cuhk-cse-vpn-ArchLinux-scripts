@@ -1,10 +1,10 @@
-# CUHK CSE VPN Script for Ubuntu 14.04+
-
+# CUHK CSE VPN Script for ArchLinux
 ## Background
+This script is forked from Carson Yip [@carsonip](https://github.com/carsonip/) version of script for CUHK CSE VPN [<Source Code Here>](https://github.com/carsonip/cuhk-cse-vpn-ubuntu-scripts) and modified by [@cftong](https://github.com/cftong/) for a better config. on ArchLinux
 
-This script was originally written by [@nnkken](https://github.com/nnkken) and is now modified by [@carsonip](https://github.com/carsonip) to reflect the changes in the CUHK CSE VPN systems.
+Carson's script was originally written by [@nnkken](https://github.com/nnkken) and [@carsonip](https://github.com/carsonip) to reflect the changes in the CUHK CSE VPN systems.
 
-The original scripts are available [here](https://drive.google.com/file/d/0B7OCa-W_RqCzd2UzWFE2WmJZM3M/view).
+[@nnkken](https://github.com/nnkken)'s scripts are available [here](https://drive.google.com/file/d/0B7OCa-W_RqCzd2UzWFE2WmJZM3M/view).
 
 ## Introduction
 
@@ -16,12 +16,13 @@ For the first time connecting to VPN, please run:
 sudo ./install.sh
 ```
 
-The script will check and install the following packages:
+The script will install the following packages:
 
- - strongswan
+ - libreswan
  - xl2tpd
  - ppp
- - isc-dhcp-client
+
+!! Before the installation , you need to install yaourt first (Refer to [ArchLinux-fr](https://archlinux.fr/yaourt-en))
 
 The script will then help you to set the required config files, and also the CSE ID and password.
 
