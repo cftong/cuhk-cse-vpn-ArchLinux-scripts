@@ -1,9 +1,12 @@
-lock
+ipcp-accept-local
+ipcp-accept-remote
+noauth
 noauth
 refuse-chap
 refuse-mschap
 refuse-mschap-v2
 debug
+mtu 1000
 nobsdcomp
 nodeflate
 noaccomp

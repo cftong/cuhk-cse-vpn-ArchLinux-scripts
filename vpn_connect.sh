@@ -7,8 +7,8 @@ cd $(dirname $0)
 # Ubuntu 14.04 specific settings
 ##################################################
 
-RESTART_IPSEC="ipsec restart"
-RESTART_XL2TPD="/etc/init.d/xl2tpd restart"
+RESTART_IPSEC="systemctl restart ipsec"
+RESTART_XL2TPD="systemctl restart xl2tpd"
 
 ##################################################
 # Common functions and variables
@@ -48,7 +48,7 @@ Step "Start IPSec and L2TP services"
 Done
 
 Step "Connect to the VPN server"
-    echo "c connect" > /var/run/xl2tpd/l2tp-control
+    sudo sh -c 'echo "c connect" > /var/run/xl2tpd/l2tp-control' 
     for (( i = 0; i < 10; i++ )); do
         ip addr show dev ppp0 > /dev/null 2>&1
         if [[ $? == 0 ]]; then

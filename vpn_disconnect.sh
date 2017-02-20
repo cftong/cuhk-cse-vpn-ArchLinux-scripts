@@ -32,6 +32,7 @@ Step "Get original device and gateway"
 Done
 
 Step "Disconnect from the VPN server"
+    ipsec auto --down cse
     echo "d" > /var/run/xl2tpd/l2tp-control
     sleep 1
 Done

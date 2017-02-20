@@ -7,8 +7,8 @@ cd $(dirname $0)
 # Ubuntu 14.04 specific settings
 ##################################################
 
-PKG_LIST=("strongswan" "xl2tpd" "ppp" "isc-dhcp-client")
-PKG_INSTALL="apt-get install"
+PKG_LIST=("libreswan" "xl2tpd" "ppp")
+PKG_INSTALL="yaourt -S"
 STRONGSWAN_PATH="/etc"
 
 InstallCFGs() {
@@ -63,16 +63,18 @@ Step "Check for root privileges"
     fi
 Done
 
+# Will Modify it later
 Step "Install required packages"
-    Message "The script will try to install the following packages:"
-    for pkg in ${PKG_LIST[@]}; do
-        Message " - $pkg"
-    done
-    $PKG_INSTALL ${PKG_LIST[@]}
-    if [[ $? != 0 ]]; then
-        Error "Installation failed! Please install the packages manually."
-        exit 1
-    fi
+      yaourt -S libreswan xl2tpd ppp
+#     Message "The script will try to install the following packages:"
+#     for pkg in ${PKG_LIST[@]}; do
+#         Message " - $pkg"
+#     done
+#     $PKG_INSTALL ${PKG_LIST[@]}
+#     if [[ $? != 0 ]]; then
+#         Error "Installation failed! Please install the packages manually."
+#         exit 1
+#     fi
 Done
 
 
